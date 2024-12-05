@@ -166,6 +166,9 @@ def delete_ad(ad_id):
     return redirect(url_for('dashboard'))
 
 
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))  # Используем порт из переменной окружения или 5000 по умолчанию
+    app.run(host='0.0.0.0', port=port)
     
 
 if __name__ == '__main__':
