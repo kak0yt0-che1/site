@@ -141,11 +141,6 @@ def logout():
     flash('Вы вышли из системы.', 'info')
     return redirect(url_for('index'))
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
-
 
 @app.route('/delete_ad/<int:ad_id>', methods=['POST'])
 def delete_ad(ad_id):
@@ -170,7 +165,3 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # Используем порт из переменной окружения или 5000 по умолчанию
     app.run(host='0.0.0.0', port=port)
     
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Используем порт из переменной окружения или 5000 по умолчанию
-    app.run(host='0.0.0.0', port=port) 
